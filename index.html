@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Magica Portal</title>
+<style>
+.box {
+	width: 100%;
+	height: 78%;
+	border: solid orange 1px;
+}
+
+.box2 {
+	width: 100%;
+	height: 48%;
+	border: solid orange 1px;
+}
+</style>
+
+</head>
+<body>
+	<form action="http://localhost:8181/magica-gui/services/transform" method="POST" target="response-frame">
+		Service: <input type="text" name="service" />
+		
+		<table id="layout" width="99%" height="99%">
+			<thead>
+				<th width="50%"></th>
+				<th width="50%"></th>
+			</thead>
+			<tr>
+				<td>Source Schema<textarea class="box" name="src_schema"></textarea></td>
+				<td rowspan="3" id="box_src_data">Source Instance<textarea class="box2" name="src_data"></textarea>
+					Response:<input type="submit" value="Transform" /><iframe class="box2" name="response-frame"></iframe></td>
+			</tr>
+			<tr>
+				<td>Target Schema<textarea class="box" name="tgt_schema"></textarea></td>
+			</tr>
+			<tr>
+				<td>Mapping<textarea class="box" name="mapping"></textarea></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
